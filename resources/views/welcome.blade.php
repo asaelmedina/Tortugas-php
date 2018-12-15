@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="title m-b-md">
-        {{ config('app.name') }}
+        Tortugas Boilerplate
     </div>
     <div class="m-b-md">
         Sample users:<br/>
