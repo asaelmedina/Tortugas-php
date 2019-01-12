@@ -44,11 +44,18 @@
                         </a>
                     </li>
                     <li>
+                        <a href="{{ route('admin.especies') }}">
+                            <i class="fa fa-key" aria-hidden="true"></i>
+                            Especies
+                        </a>
+                    </li>
+                    <li>
                         <a href="{{ route('admin.permissions') }}">
                             <i class="fa fa-key" aria-hidden="true"></i>
                             {{ __('views.backend.section.navigation.menu_1_2') }}
                         </a>
                     </li>
+
                 </ul>
             </div>
             <div class="menu_section">
