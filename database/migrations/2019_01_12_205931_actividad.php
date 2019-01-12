@@ -17,6 +17,7 @@ class Actividad extends Migration
         $table->uuid('UUID')->primary();
           $table->string('tipo');
           $table->dateTime('Fecha');
+          
           $table->uuid('nido_UUID');
           $table->timestamps();
         });
