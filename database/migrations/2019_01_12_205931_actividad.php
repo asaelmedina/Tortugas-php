@@ -16,7 +16,7 @@ class Actividad extends Migration
       Schema::create('Actividad', function (Blueprint $table) {
         $table->uuid('UUID')->primary();
           $table->string('tipo');
-          $table->dateTime('Fecha');
+          $table->dateTime('Fecha');    
           $table->uuid('nido_UUID');
           $table->timestamps();
         });
