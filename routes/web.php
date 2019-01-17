@@ -63,10 +63,29 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::get('permissions/{user}/repeat', 'PermissionController@repeat')->name('permissions.repeat');
     Route::get('dashboard/log-chart', 'DashboardController@getLogChartData')->name('dashboard.log.chart');
     Route::get('dashboard/registration-chart', 'DashboardController@getRegistrationChartData')->name('dashboard.registration.chart');
+
     //Especies
     Route::get('especies', 'EspeciesController@index')->name('especies');
     Route::get('especies/{user}/repeat', 'EspeciesController@repeat')->name('especies.repeat');
+
+    Route::get('especies_agregar', 'EspeciesController@add')->name('especies_agregar');
+    Route::post('guardar_especies',[
+    'uses' => 'EspeciesController@guardar',
+    'as' => 'guardar_especies',
+    ]);
+
+    //Route::get('especies_editar', 'EspeciesController@edit')->name('especies_editar');
+    Route::get('especies_editar/{id}',[
+    'uses' => 'EspeciesController@editar',
+    'as' => 'especies_editar',
+    ]);
+    Route::get('especies_eliminar', 'EspeciesController@delete')->name('especies_eliminar');
+    Route::get('eliminar/{id}',[
+    'uses' => 'EspeciesController@eliminar',
+    'as' => 'eliminar',
+    ]);
 });
+
 
 
 Route::get('/', 'HomeController@index');
