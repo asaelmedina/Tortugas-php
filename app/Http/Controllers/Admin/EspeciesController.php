@@ -45,8 +45,7 @@ class EspeciesController
 
       $Objt_especie->save();
 
-      $_especies = Especie::all();
-      return view('admin.especies', ['datos_especie' => $_especies]);
+      return redirect('admin/especies');
 
     }
 
@@ -94,8 +93,7 @@ class EspeciesController
 
           $edit2_especie->save();
 
-          $_especies = Especie::all();
-          return view('admin.especies', ['datos_especie' => $_especies]);
+        return redirect('admin/especies');
     }
 
     public function delete(Request $request)
@@ -108,7 +106,10 @@ class EspeciesController
     {
       $especie = Especie::where("id", $id )->first();
       $especie->delete();
-      return redirect()->back();
+
+
+      return redirect('admin/especies');
+
     }
 
     public function repeat(User $user, Request $request)

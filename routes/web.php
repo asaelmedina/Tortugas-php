@@ -77,12 +77,11 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     //Route::get('especies_editar', 'EspeciesController@edit')->name('especies_editar');
     Route::get('especies_editar/{id}',[
     'uses' => 'EspeciesController@editar',
-    'as' => 'especies_editar',
-    ]);
+    'as' => 'especies_editar',]);
+
     Route::post('update_especies/{id}',[
     'uses' => 'EspeciesController@update',
-    'as' => 'update_especies',
-    ]);
+    'as' => 'update_especies',]);
 
     Route::get('especies_eliminar', 'EspeciesController@delete')->name('especies_eliminar');
     Route::get('eliminar/{id}',[

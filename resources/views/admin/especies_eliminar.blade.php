@@ -13,7 +13,7 @@
 
               <div>
 
-              <form action="{{ route('admin.especies_agregar') }}" method="get">
+              <form action="" method="get">
                 <label>Dominio</label></br>
                 <input /></br>
                 <label>Reino</label></br>
