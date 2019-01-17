@@ -44,9 +44,7 @@
 
         <div>
           <form action="{{ route('admin.especies_agregar') }}" method="get">
-
              <input type="submit" value="Agregar nueva especie">
-
           </form>
 
         </div>

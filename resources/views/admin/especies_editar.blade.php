@@ -13,32 +13,28 @@
 
               <div>
 
-
-
-
-              <form action="" method="get">
-                @foreach($datos_especie as $campo_especie)
+              <form action="{{ route('admin.update_especies',['id' => $datos_especie->id]) }}" method="post">
                 <label>Dominio</label></br>
-                <input/>{{ $campo_especie->Dominio }}</br>
+                <input type="text" name="edit_dominio" value="{{ $datos_especie->Dominio }}" required/></br>
                 <label>Reino</label></br>
-                <input/>{{ $campo_especie->Reino }}</br>
+                <input type="text" name="edit_reino" value="{{ $datos_especie->Reino }}" required/></br>
                 <label>Phylum</label></br>
-                <input/>>{{ $campo_especie->Phylum }}</br>
+                <input type="text" name="edit_phylum" value="{{ $datos_especie->Phylum }}" required/></br>
                 <label>Clase</label></br>
-                <input/>{{ $campo_especie->Clase }}</br>
+                <input type="text" name="edit_clase" value="{{ $datos_especie->Clase }}" required/></br>
                 <label>Orden</label></br>
-                <input/>{{ $campo_especie->Orden }}</br>
+                <input type="text" name="edit_orden" value="{{ $datos_especie->Orden }}" required/></br>
                 <label>Familia</label></br>
-                <input/>{{ $campo_especie->Familia }}</br>
+                <input type="text" name="edit_familia" value="{{ $datos_especie->Familia }}" required/></br>
                 <label>Genero</label></br>
-                <input/>{{ $campo_especie->Genero }}</br>
+                <input type="text" name="edit_genero" value="{{ $datos_especie->Genero }}" required/></br>
                 <label>Especie</label></br>
-                <input/>{{ $campo_especie->Especie }}</br>
+                <input type="text" name="edit_especie" value="{{ $datos_especie->Especie }}" required/></br>
                 <label>Imagen</label></br>
-                <input/>{{ $campo_especie->Imagen }}</br>
+                <input type="text" name="edit_imagen" value="{{ $datos_especie->Imagen }}" required/></br>
 
-      @endforeach
               <input type="submit" value="Editar especie">
+              <input type="hidden" value="{{Session::token()}}" name="_token"/>
               </form>
               <div>
             </tbody>

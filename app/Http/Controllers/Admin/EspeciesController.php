@@ -50,18 +50,52 @@ class EspeciesController
 
     }
 
-    public function edit(Request $request)
+    /*public function edit(Request $request)
     {
-        $especie = Especie::where("id","=",$request->id);
-        return view('admin.especies_editar', ['datos_especie' => $especie]);
-      /*  return view('admin.especies_editar');*/
-    }
+        $edit2_especie = Especie::where("id","=",$request->id);
+        return view('admin.especies_editar', ['datos_especie' => $edit2_especie]);
+        return view('admin.especies_editar');
+    }*/
 
     public function editar($id)
     {
-        $especie = Especie::where("id", $id )->first();
-        return view('admin.especies_editar', ['datos_especie' => $especie]);
+        $edit_especie = Especie::where("id", $id )->first();
+        return view('admin.especies_editar', ['datos_especie' => $edit_especie]);
+
+        //$edit_especie = Especie::find($id);
+        //return view ('admin.especies_editar', compact('datos_especie','id'));
       /*  return view('admin.especies_editar');*/
+    }
+
+    public function update(Request $request, $id)
+    {
+
+          $dominio = $request['edit_dominio'];
+          $reino = $request['edit_reino'];
+          $phylum = $request['edit_phylum'];
+          $clase = $request['edit_clase'];
+          $orden = $request['edit_orden'];
+          $familia = $request['edit_familia'];
+          $genero = $request['edit_genero'];
+          $v_especie = $request['edit_especie'];
+          $imagen = $request['edit_imagen'];
+
+          $edit2_especie = Especie::where("id", $id )->first();
+
+          $edit2_especie->Dominio = $dominio;
+          $edit2_especie->Reino =$reino;
+          $edit2_especie->Phylum =$phylum;
+          $edit2_especie->Clase =$clase;
+          $edit2_especie->Orden =$orden;
+          $edit2_especie->Familia =$familia;
+          $edit2_especie->Genero =$genero;
+          $edit2_especie->Especie =$v_especie;
+          $edit2_especie->Imagen =$imagen;
+
+          $edit2_especie->save();
+
+          $_especies = Especie::all();
+          return view('admin.especies', ['datos_especie' => $_especies]);
     }
 
     public function delete(Request $request)

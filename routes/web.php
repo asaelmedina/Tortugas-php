@@ -79,6 +79,11 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     'uses' => 'EspeciesController@editar',
     'as' => 'especies_editar',
     ]);
+    Route::post('update_especies/{id}',[
+    'uses' => 'EspeciesController@update',
+    'as' => 'update_especies',
+    ]);
+
     Route::get('especies_eliminar', 'EspeciesController@delete')->name('especies_eliminar');
     Route::get('eliminar/{id}',[
     'uses' => 'EspeciesController@eliminar',
